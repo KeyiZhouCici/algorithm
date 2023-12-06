@@ -52,11 +52,24 @@ class measurement
             cowsList.add(info(f.readLine()));
         }
 
-        for (int a = 0; a<lineNum;a++)
-        {
-            if ()
-        }
 
+       for (int a = 0; a<lineNum-1;a++)
+       {
+           int min = a;
+           for (int b = a + 1; b < lineNum; b++)
+           {
+               if (cowsList.get(b).date < cowsList.get(min).date)
+               {
+                   min = b;
+               }
+
+           }
+
+           if (min != a)
+           {
+               Collections.swap(cowsList, min, a);
+           }
+       }
 
 
         int total=0;
@@ -93,8 +106,12 @@ class measurement
             {
               if(dicCow.get(cowsList.get(c).name)>= dicCow.get(cowsList.get(winCowNumber).name))
               {
-                  winCowNumber = c;
-                  ++total;
+
+                  if (cowsList.get(c).name!=cowsList.get(winCowNumber).name)
+                  {
+                      winCowNumber = c;
+                      ++total;
+                  }
               }
 
             }
