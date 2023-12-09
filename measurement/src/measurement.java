@@ -104,14 +104,18 @@ class measurement
             }
             else
             {
+
               if(dicCow.get(cowsList.get(c).name)>= dicCow.get(cowsList.get(winCowNumber).name))
               {
+                 for (int index = 0; index<dicCow.size()-1;index++)
+                 {
+                     if (dicCow.get(index).equals(dicCow.get(cowsList.get(c).name)))
+                     {
+                         dicCow.keys()
+                     }
+                 }
 
-                  if (cowsList.get(c).name!=cowsList.get(winCowNumber).name)
-                  {
-                      winCowNumber = c;
-                      ++total;
-                  }
+
               }
 
             }
